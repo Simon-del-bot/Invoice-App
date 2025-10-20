@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invoice Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Invoice Generator</h1>
+  <div class="inputs">
+    <label>Logo: <input type="file" id="logoUpload" accept="image/*"></label>
+    <input type="text" id="company" placeholder="Company">
+    <input type="text" id="address" placeholder="Address">
+    <input type="text" id="phone" placeholder="Phone">
+    <input type="text" id="email" placeholder="Email">
+    <input type="text" id="website" placeholder="Website">
+    <div class="color-picker">
+      <label>Theme Color:</label>
+      <button class="color-btn" data-color="red" style="background:red;"></button>
+      <button class="color-btn" data-color="green" style="background:green;"></button>
+      <button class="color-btn" data-color="blue" style="background:blue;"></button>
+      <button class="color-btn" data-color="black" style="background:black;"></button>
+    </div>
+  </div>
+
+  <div id="invoice" class="invoice">
+    <img id="logo" src="" alt="Your Logo" class="logo">
+    <h2 id="companyName">Company Name</h2>
+    <p id="companyDetails">Address<br>Phone | Email | Website</p>
+    <h3>Invoice</h3>
+    <p>Invoice No: <span id="invoiceNumber"></span></p>
+    <table id="items">
+      <tr><th>Item</th><th>Qty</th><th>Price</th><th>Total</th></tr>
+      <tr><td><input placeholder="Item name"></td><td><input type="number" placeholder="1"></td><td><input type="number" placeholder="0"></td><td class="total">0</td></tr>
+    </table>
+    <button id="addItem">Add Item</button>
+    <h4 id="grandTotal">Grand Total: ₦0</h4>
+    <p class="thankyou">Thank you for doing business with us!</p>
+  </div>
+
+  <div class="actions">
+    <button id="generateImage">Generate Image</button>
+    <button id="downloadImage">Download Image</button>
+    <button id="shareImage">Share</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
